@@ -10,6 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "nf start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,7 @@
     "url": "git+https://github.com/brucelin1218/CalHacks4.0.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Skeleton code by Tomomi Imura. Modified by Bruce Lin, Carson Trinh, and Denny Hung",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brucelin1218/CalHacks4.0/issues"
