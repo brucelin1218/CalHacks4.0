@@ -1,19 +1,17 @@
-const express = require('express')
+const express = require('express');
 const app = express();
-const APIAI_TOKEN = ''
-const APIAI_SESSION_ID = ''
+const APIAI_TOKEN = '';
+const APIAI_SESSION_ID = '';
 
 app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
 
 const server = app.listen(5000);
-app.get('/', (req, res) => {
-	res.sendFile('index.html');
-)};
+
 
 const io = require('socket.io')(server);
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log('An user connected');
 });
 
 const apiai = require('apiai')(APIAI_TOKEN);

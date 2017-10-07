@@ -1,10 +1,15 @@
 {
   "name": "CalHacks4.0",
   "version": "1.0.0",
-  "description": "Simple AI Chat Bot with Web Speech API",
+  "description": ":)",
   "main": "index.js",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "express": "^4.16.1",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "npm start"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,10 +22,5 @@
   "bugs": {
     "url": "https://github.com/brucelin1218/CalHacks4.0/issues"
   },
-  "homepage": "https://github.com/brucelin1218/CalHacks4.0#readme",
-  "dependencies": {
-    "apiai": "^4.0.3",
-    "express": "^4.16.1",
-    "socket.io": "^2.0.3"
-  }
+  "homepage": "https://github.com/brucelin1218/CalHacks4.0#readme"
 }
