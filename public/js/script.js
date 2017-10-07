@@ -17,3 +17,14 @@ recognition.addEventListener('result', (e) => {
 	const socket = io();
 	socket.emit('chat message', text);
 });
+
+function synthVoice(text) {
+	const synth = window.speechSynthesis;
+	const utterance = new SpeechSynthesisUtterance();
+	utterance.text = text;
+	synth.speak(utterance);
+}
+
+socket.on('bot reply', function(replyText) {
+	synthVoice(replyText);
+});
