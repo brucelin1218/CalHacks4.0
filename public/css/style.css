@@ -77,6 +77,10 @@ button:active {
 button:focus {
   outline: 0;
 }
+logo {
+  width: 200px;
+  height: 200px;
+}
 
 .fa {
   display: inline-block;
