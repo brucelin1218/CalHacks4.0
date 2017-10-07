@@ -12,7 +12,7 @@ const server = app.listen(5000);
 const io = require('socket.io')(server);
 
 io.on('connection', function(socket){
-  console.log('An user connected');
+  console.log('A user connected');
 });
 
 const apiai = require('apiai')(APIAI_TOKEN);
@@ -24,9 +24,10 @@ app.get('/', (req, res) => {
 
 io.on('connection', function(socket) {
 	socket.on('chat message', (text) => {
-
+		console.log('Message: ' + text);
+		// Get a reply from API.ai
 		let apiaiReq = apiai.textRequest(text, {
-			sessionId:APIAI_SESSION_ID
+			sessionId: APIAI_SESSION_ID
 		});
 
 		apiaiReq.on('response', (response) => {
