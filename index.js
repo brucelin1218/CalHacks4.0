@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const APIAI_TOKEN = '';
-const APIAI_SESSION_ID = '';
+const APIAI_TOKEN = process.env.APIAI_TOKEN;
+const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 
 app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
@@ -10,6 +10,7 @@ const server = app.listen(5000);
 
 
 const io = require('socket.io')(server);
+
 io.on('connection', function(socket){
   console.log('An user connected');
 });
@@ -25,7 +26,7 @@ io.on('connection', function(socket) {
 	socket.on('chat message', (text) => {
 
 		let apiaiReq = apiai.textRequest(text, {
-			sessionId: APIAI_SESSION_ID
+			sessionId:APIAI_SESSION_ID
 		});
 
 		apiaiReq.on('response', (response) => {
