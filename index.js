@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const APIAI_TOKEN = process.env.APIAI_TOKEN;
-const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
+const APIAI_TOKEN = 'ca7f9f7e014d4822b8a26567853d4697';
+const APIAI_SESSION_ID = 'calhacks';
 
 app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
