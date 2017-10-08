@@ -65,8 +65,12 @@ def main(search_phrase):
 	return summary
 
 while True:
-	search_phrase = raw_input("What would you like to summarize the latest news about? ")
-	if (search_phrase == "exit"):
+	try:
+		# search_phrase = raw_input("What would you like to summarize the latest news about? ")
+		search_phrase = raw_input()
+		if (search_phrase == exit):
+			exit()
+		summary = main(search_phrase)
+		print(summary.encode('utf-8'))  # print
+	except EOFError:
 		exit()
-	summary = main(search_phrase)
-	print(summary)  # print

@@ -26,14 +26,17 @@ io.on('connection', function(socket) {
 	socket.on('chat message', (text) => {
 		console.log('Message: ' + text);
 		// Get a reply from API.ai
-		if(text.includes('news') && text.includes('summ')) {
-
+		if(text.toUpperCase().includes('news'.toUpperCase())) {
 			var keywords = ['about', 'on', 'regarding'];
+			var subject = '';
 			for (i = 0; i < keywords.length; i++) {
 				let keyword = keywords[i];
 				start = text.indexOf(keyword);
 				if (start != -1) {
-					var subject = text.substring(start, keyword.length);
+					console.log(i)
+					console.log(start)
+					subject = text.substring(start + keyword.length, text.length);
+					console.log(subject);
 					break;
 				}
 			}
@@ -43,11 +46,11 @@ io.on('connection', function(socket) {
 
 			// sends a message to the Python script via stdin
 			pyshell.send(subject);
-
+			var aiText = '';
 			pyshell.on('message', function (message) {
 			  // received a message sent from the Python script (a simple "print" statement)
-			  let aiText = message;
-			  socket.emit('bot reply', aiText);;
+				aiText = aiText + message;
+		  		socket.emit('bot reply', aiText);
 			});
 
 			// end the input stream and allow the process to exit
