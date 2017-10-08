@@ -33,10 +33,7 @@ io.on('connection', function(socket) {
 				let keyword = keywords[i];
 				start = text.indexOf(keyword);
 				if (start != -1) {
-					console.log(i)
-					console.log(start)
 					subject = text.substring(start + keyword.length, text.length);
-					console.log(subject);
 					break;
 				}
 			}
