@@ -60,7 +60,7 @@ def main(search_phrase):
 	return summary
 
 while True:
-	search_phrase = input("What would you like to news about? ")
+	search_phrase = input("What would you like to summarize the latest news about? ")
 	if (search_phrase == "exit"):
 		exit()
 	summary = main(search_phrase)
