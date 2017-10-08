@@ -32,7 +32,7 @@ def search(search_phrase):
 	href = soup.find_all('a')[link_start].get('href')
 	# TODO If href is redirected to google.com, end the program
 	if href.startswith("https://www.google.com"):
-		return False
+		return None
 	print(href)
 	return href
 
@@ -54,12 +54,14 @@ def summarize(url):
 def main(search_phrase):
 	# search_phrase = input("What would you like to news about? ")
 	url = search(search_phrase)
+	if url == None:
+		return "I couldn't find anything on {0}.".format(search_phrase)
 	summary = summarize(url)
-	# print(summary)
 	return summary
 
 while True:
 	search_phrase = input("What would you like to news about? ")
 	if (search_phrase == "exit"):
 		exit()
-	main(search_phrase)
+	summary = main(search_phrase)
+	print(summary)
