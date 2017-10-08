@@ -39,7 +39,7 @@ io.on('connection', function(socket) {
 			console.log(error);
 		});
 
-			apiaiReq.end();
+		apiaiReq.end();
 	});
 });
 
