@@ -1,7 +1,5 @@
-## We're creating a chat bot for the CalHacks 4.0
+ ## Meet Brudencar, the chatbot made in 48 hours.
 
-We want to give it a try to creat a chat bot that
-is continuousely learning from its conversation
-experiences.
+For Cal Hacks 4.0, we created a chatbot that learned from its conversations with people and offered new ways to interact with the world.
 
 This project is inspired by Tomomi Imura.

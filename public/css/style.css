@@ -26,6 +26,7 @@ footer {
   position: fixed;
   bottom: 1em;
   left: 1em;
+  color: #fff;
 }
 footer a {
   color: #f80;
@@ -90,6 +91,7 @@ button:focus {
 }
 .developer {
   margin-left: 5%;
+  margin-bottom: 1%;
 }
 .fa {
   display: inline-block;
