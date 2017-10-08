@@ -39,7 +39,10 @@ def summarize(url):
 	# soup = BeautifulSoup(urllib2.urlopen(url))
 	page = requests.get(url + search_phrase)
 	soup = BeautifulSoup(page.content, "lxml")
-	result = soup.title.string.upper() + "\n"
+	title = soup.title
+	result = url + "\n"
+	if title != None and title.string != None:
+		result += title.string.upper() + "\n"
 	if __name__ == "__main__":
 	    parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
 	    # or for plain text files
