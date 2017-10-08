@@ -28,11 +28,21 @@ io.on('connection', function(socket) {
 		// Get a reply from API.ai
 		if(text.includes('news') && text.includes('summ')) {
 
+			var keywords = ['about', 'on', 'regarding'];
+			for (i = 0; i < keywords.length; i++) {
+				let keyword = keywords[i];
+				start = text.indexOf(keyword);
+				if (start != -1) {
+					var subject = text.substring(start, keyword.length);
+					break;
+				}
+			}
+
 			var PythonShell = require('python-shell');
 			var pyshell = new PythonShell('news_shortener/news.py');
 
 			// sends a message to the Python script via stdin
-			pyshell.send(text);
+			pyshell.send(subject);
 
 			pyshell.on('message', function (message) {
 			  // received a message sent from the Python script (a simple "print" statement)
