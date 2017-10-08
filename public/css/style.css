@@ -15,12 +15,11 @@ body {
   background: #4776E6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   background-size: cover;
   color: #fff;
 }
 footer {
-  margin-left: 2%;
+  margin-left: 5%;
   height: 10%;
   font-size: 0.75em;
   color: silver;
@@ -65,8 +64,9 @@ button {
   margin: 4em auto 3em;
   text-align: center;
   color: #fff;
-  background: #F06292;
-  box-shadow: 2px 5px 30px rgba(63, 200, 201, .4);
+  /* background: #F06292; */
+  background: #81D4FA;
+  box-shadow: 10px -10px 300px rgba(63, 200, 201, .6);
   will-change: transform, filter;
   transition: all 0.3s ease-out;
 }
