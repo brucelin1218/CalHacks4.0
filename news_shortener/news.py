@@ -33,11 +33,13 @@ def search(search_phrase):
 	# TODO If href is redirected to google.com, end the program
 	if href.startswith("https://www.google.com"):
 		return None
-	print(href)
 	return href
 
 def summarize(url):
-	result = ""
+	# soup = BeautifulSoup(urllib2.urlopen(url))
+	page = requests.get(url + search_phrase)
+	soup = BeautifulSoup(page.content, "lxml")
+	result = soup.title.string.upper() + "\n"
 	if __name__ == "__main__":
 	    parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
 	    # or for plain text files
@@ -64,4 +66,4 @@ while True:
 	if (search_phrase == "exit"):
 		exit()
 	summary = main(search_phrase)
-	print(summary)
+	print(summary)  # print
