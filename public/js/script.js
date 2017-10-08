@@ -23,6 +23,7 @@ recognition.addEventListener('result', (e) => {
 
 	outputYou.textContent = text;
 	console.log('Confidence: ' + e.results[0][0].confidence);
+	// const socket = io();
 	socket.emit('chat message', text);
 });
 
@@ -44,6 +45,6 @@ function synthVoice(text) {
 socket.on('bot reply', function(replyText) {
 	synthVoice(replyText);
 
-	if (replyText == '') replyText = '(I have no idea.)';
+	if (replyText == '') replyText = '(I did not get it.)';
 	outputBot.textContent = replyText;
 });
