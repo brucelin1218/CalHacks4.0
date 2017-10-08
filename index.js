@@ -26,20 +26,42 @@ io.on('connection', function(socket) {
 	socket.on('chat message', (text) => {
 		console.log('Message: ' + text);
 		// Get a reply from API.ai
-		let apiaiReq = apiai.textRequest(text, {
-			sessionId: APIAI_SESSION_ID
-		});
+		if(text.includes('news') && text.includes('summ')) {
 
-		apiaiReq.on('response', (response) => {
-			let aiText = response.result.fulfillment.speech;
-			socket.emit('bot reply', aiText);
-		});
+			var PythonShell = require('python-shell');
+			var pyshell = new PythonShell('news_shortener/news.py');
 
-		apiaiReq.on('error', (error) => {
-			console.log(error);
-		});
+			// sends a message to the Python script via stdin
+			pyshell.send(text);
 
-		apiaiReq.end();
+			pyshell.on('message', function (message) {
+			  // received a message sent from the Python script (a simple "print" statement)
+			  let aiText = message;
+			  socket.emit('bot reply', aiText);;
+			});
+
+			// end the input stream and allow the process to exit
+			pyshell.end(function (err) {
+			  if (err) throw err;
+			  console.log('finished');
+			});
+		} else {
+			let apiaiReq = apiai.textRequest(text, {
+				sessionId: APIAI_SESSION_ID
+			});
+
+			apiaiReq.on('response', (response) => {
+				let aiText = response.result.fulfillment.speech;
+				socket.emit('bot reply', aiText);
+			});
+
+			apiaiReq.on('error', (error) => {
+				console.log(error);
+			});
+
+			apiaiReq.end();
+		}
+
 	});
 });
 

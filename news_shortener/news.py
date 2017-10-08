@@ -53,7 +53,7 @@ def summarize(url):
 	    summarizer.stop_words = get_stop_words(LANGUAGE)
 
 	    for sentence in summarizer(parser.document, SENTENCES_COUNT):
-	        result += str(sentence) + " "
+	        result += unicode(sentence) + " "
 	return result
 
 def main(search_phrase):
@@ -65,7 +65,7 @@ def main(search_phrase):
 	return summary
 
 while True:
-	search_phrase = input("What would you like to summarize the latest news about? ")
+	search_phrase = raw_input("What would you like to summarize the latest news about? ")
 	if (search_phrase == "exit"):
 		exit()
 	summary = main(search_phrase)
