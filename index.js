@@ -7,8 +7,6 @@ app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
 
 const server = app.listen(5000);
-
-
 const io = require('socket.io')(server);
 
 io.on('connection', function(socket){
@@ -71,7 +69,6 @@ io.on('connection', function(socket) {
 
 			apiaiReq.end();
 		}
-
 	});
 });
 

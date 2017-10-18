@@ -5,8 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "@google-cloud/translate": "^1.0.0",
+    "api.ai": "^1.0.3",
     "apiai": "^4.0.3",
-    "express": "^4.16.1",
+    "express": "^4.16.2",
+    "python-shell": "^0.4.0",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {},
