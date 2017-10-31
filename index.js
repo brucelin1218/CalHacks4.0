@@ -1,7 +1,8 @@
-const express = require('express');
-const app = express();
 const APIAI_TOKEN = 'ca7f9f7e014d4822b8a26567853d4697';
 const APIAI_SESSION_ID = 'calhacks';
+
+const express = require('express');
+const app = express();
 
 app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
@@ -23,7 +24,7 @@ app.get('/', (req, res) => {
 io.on('connection', function(socket) {
 	socket.on('chat message', (text) => {
 		console.log('Message: ' + text);
-		// Get a reply from API.ai
+		//Get a reply from API.ai
 		if(text.toUpperCase().includes('news'.toUpperCase())) {
 			var keywords = ['about', 'on', 'regarding'];
 			var subject = '';
