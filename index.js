@@ -26,7 +26,7 @@ io.on('connection', function(socket) {
 		console.log('Message: ' + text);
 		//Get a reply from API.ai
 		if(text.toUpperCase().includes('news'.toUpperCase())) {
-			var keywords = ['about', 'on', 'regarding'];
+			var keywords = ['news', 'about', 'on', 'regarding'];
 			var subject = '';
 			for (i = 0; i < keywords.length; i++) {
 				let keyword = keywords[i];
