@@ -14,4 +14,8 @@ By asking the keywords like "about," "news," "on," and "regarding," Brudencar re
 
 We are making this chatbot more entertained. There will be more features added on.
 
+## To Start
+
+To start the program, `node index`
+
 <img src="https://github.com/brucelin1218/CalHacks4.0/blob/master/img.png"/>
