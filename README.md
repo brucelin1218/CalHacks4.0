@@ -1,20 +1,20 @@
-## Meet Brudencar, the CalHacks4.0 Project.
+## Meet Brudencar, a CalHacks4.0 Project.
 
 We created a chatbot that learned from its conversations with people and offered new ways to interact with the world.
 
-## Small Talk
+### Small Talk
 
-Brudencar keeps enriching its responses better based on the conversations it has.
+Brudencar continually enriches its responses based on the conversations it has with users.
 
-## Summarize the news
+### Summarize the News
 
 By asking the keywords like "about," "news," "on," and "regarding," Brudencar returns the summary of the lastest news to you.
 
-## More Features
+### More Features
 
-We are making this chatbot more entertained. There will be more features added on.
+Brudencar is an ongoing project. Our goal is to continue updating Brudencar to be more entertaining and functional. More features are to come!
 
-## To Start
+## Get Started
 
 To start the program, `node index`
 
